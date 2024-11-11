@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProFaLaGra</string>
+    <string name="botonSelectGraf">Seleccionar gráfica</string>
+    <string name="botonAgreGraf">Agregar gráfica</string>
+    <string name="botonOpenGraf">Abrir</string>
+    <string name="botonEditGraf">Editar</string>
+    <string name="botonChordGraf">Aceptar</string>
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VisGrafActivity">
+
+    <ImageView
+        android:id="@+id/ivGraf"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reales" />
+
+    <ImageView
+        android:id="@+id/ivPuntY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/puntero" />
+
+    <ImageView
+        android:id="@+id/ivPuntO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="@+id/ivPuntY"
+        app:layout_constraintTop_toBottomOf="@+id/ivPuntY"
+        app:srcCompat="@drawable/puntero" />
+
+    <ImageView
+        android:id="@+id/ivPuntX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPuntO"
+        app:layout_constraintStart_toEndOf="@+id/ivPuntO"
+        app:srcCompat="@drawable/puntero" />
+
+    <SeekBar
+        android:id="@+id/sbZoom"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btSavDat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="BTSavDat"
+        android:text="Guardar"
+        app:layout_constraintBottom_toTopOf="@+id/sbZoom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRefChordsX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eje X:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRefChordsY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eje Y:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRefChordsX" />
+
+    <TextView
+        android:id="@+id/tvRefChordsO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Origen:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRefChordsY" />
+</androidx.constraintlayout.widget.ConstraintLayout>
