@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_button"
+        android:enabled="true"
+        android:icon="@drawable/outline_home_24"
+        android:title="Home" />
+<!--    <item-->
+<!--        android:id="@+id/menu_button"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/outline_dehaze_24"-->
+<!--        android:title="Hamburger" />-->
+    <item
+        android:id="@+id/add_button"
+        android:enabled="true"
+        android:icon="@drawable/baseline_add_circle_24"
+        android:title="Add" />
+    <item
+        android:id="@+id/settings_button"
+        android:enabled="true"
+        android:icon="@drawable/rounded_brightness_5_24"
+        android:title="Settings" />
+<!--    <item-->
+<!--        android:id="@+id/search_button"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/outline_search_24"-->
+<!--        android:title="Search" />-->
+</menu>

@@ -31,6 +31,8 @@ public class AgreGrafActivity extends AppCompatActivity {
     String[] sp = {"Lineal", "Log"};
     String[] datosVector = new String[7]; //Aqui se guardara toda la informacion de la grafica
     boolean As=false;
+
+    private static final int PICK_IMAGE_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,13 +76,14 @@ public class AgreGrafActivity extends AppCompatActivity {
     }
     //Metodos para escoger el archivo imagen
     public void cargarImagen() {
-        Intent intObj = new Intent(Intent.ACTION_GET_CONTENT); //Nose que hace esto
-        intObj.setType("image/");
-        startActivityForResult(intObj, 10);
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT); //Nose que hace esto
+        intent.setType("image/*");
+        startActivityForResult(Intent.createChooser(intent, "Seleccionar Imagen"), PICK_IMAGE_REQUEST);
+
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK) {
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             if (data == null){
                 return;
             }
