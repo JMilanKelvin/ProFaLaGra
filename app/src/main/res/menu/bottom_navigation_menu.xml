@@ -4,11 +4,11 @@
         android:enabled="true"
         android:icon="@drawable/outline_home_24"
         android:title="Home" />
-    <item
-        android:id="@+id/menu_button"
-        android:enabled="true"
-        android:icon="@drawable/outline_dehaze_24"
-        android:title="Hamburger" />
+<!--    <item-->
+<!--        android:id="@+id/menu_button"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/outline_dehaze_24"-->
+<!--        android:title="Hamburger" />-->
     <item
         android:id="@+id/add_button"
         android:enabled="true"
@@ -19,9 +19,9 @@
         android:enabled="true"
         android:icon="@drawable/rounded_brightness_5_24"
         android:title="Settings" />
-    <item
-        android:id="@+id/search_button"
-        android:enabled="true"
-        android:icon="@drawable/outline_search_24"
-        android:title="Search" />
+<!--    <item-->
+<!--        android:id="@+id/search_button"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/outline_search_24"-->
+<!--        android:title="Search" />-->
 </menu>

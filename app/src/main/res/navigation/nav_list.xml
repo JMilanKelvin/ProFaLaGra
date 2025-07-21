@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_list">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_list"
+    app:startDestination="@id/listFragment">
 <!--    List-->
 <!--    Edit-->
 
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.profalagra.features.lista.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
 </navigation>
