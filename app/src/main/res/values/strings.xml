@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ProFaLaGra</string>
     <string name="botonSelectGraf">Seleccionar gráfica</string>
@@ -5,6 +6,4 @@
     <string name="botonOpenGraf">Abrir</string>
     <string name="botonEditGraf">Editar</string>
     <string name="botonChordGraf">Aceptar</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

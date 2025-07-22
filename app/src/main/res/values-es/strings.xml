@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProFaLaGra</string>
+    <string name="botonSelectGraf">Select graphic</string>
+    <string name="botonAgreGraf">Add graphic</string>
+    <string name="botonOpenGraf">Open</string>
+    <string name="botonEditGraf">Edit</string>
+    <string name="botonChordGraf">Accept</string>
+</resources>
