@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".features.lista.ListFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+        <variable
+            name="infoTitle"
+            type="String" />
+        <variable
+            name="infoBody"
+            type="String" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="List Fragment" />
+        android:orientation="vertical"
+        tools:context=".features.lista.ListFragment">
 
-</FrameLayout>
+        <include
+            layout="@layout/layout_info_message"
+            android:id="@+id/info_message"
+            app:title="@{infoTitle}"
+            app:body="@{infoBody}" />
+    </LinearLayout>
+</layout>
