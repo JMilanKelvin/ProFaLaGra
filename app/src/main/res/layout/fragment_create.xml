@@ -16,9 +16,9 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ruta del archivo: /storage/ubicacion/de/tu/imagen.png"
+            android:hint="@string/path_imagen"
             android:textSize="16sp"
-            android:textStyle="bold"
+            style="@style/TextTitle"
             android:layout_marginBottom="16dp" />
 
         <LinearLayout
@@ -30,7 +30,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Nombre :"
+                android:text="@string/nombre"
+                style="@style/TextBody"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -39,7 +40,9 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Grafico chi cuadrado"
+                android:hint="@string/grafico_chi_cuadrado"
+                android:textStyle="italic"
+                style="@style/TextCreate"
                 android:inputType="text"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -53,8 +56,9 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Valor inicial X :"
+                android:text="@string/valor_inicial_x"
                 android:gravity="start"
+                style="@style/TextCreate"
                 android:layout_gravity="center_vertical" />
 
             <EditText
@@ -63,7 +67,9 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:text="10.0"
+                android:hint="10.0"
+                style="@style/TextCreate"
+                android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
@@ -76,7 +82,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Valor final X :"
+                android:text="@string/valor_final_x"
+                style="@style/TextCreate"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -86,7 +93,9 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:text="100000.0"
+                android:hint="100000.0"
+                style="@style/TextCreate"
+                android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
@@ -99,7 +108,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Valor inicial Y :"
+                android:text="@string/valor_inicial_y"
+                style="@style/TextCreate"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -109,7 +119,9 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:text="1.0"
+                android:hint="1.0"
+                style="@style/TextCreate"
+                android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
@@ -122,7 +134,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Valor final Y :"
+                android:text="@string/valor_final_y"
+                style="@style/TextCreate"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -132,7 +145,9 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:text="1.0"
+                android:hint="1.0"
+                style="@style/TextCreate"
+                android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
@@ -145,7 +160,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Escala en X :"
+                android:text="@string/escala_en_x"
+                style="@style/TextCreate"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -166,7 +182,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Escala en Y :"
+                android:text="@string/escala_en_y"
+                style="@style/TextCreate"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -190,7 +207,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Siguiente"
+                android:text="@string/siguiente"
                 android:backgroundTint="#2B2B2B"
                 android:textColor="#FFFFFF"
                 android:layout_marginEnd="8dp" />
@@ -200,7 +217,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Cancelar"
+                android:text="@string/cancelar"
                 android:backgroundTint="#FF6F61"
                 android:textColor="#FFFFFF"
                 android:layout_marginStart="8dp" />

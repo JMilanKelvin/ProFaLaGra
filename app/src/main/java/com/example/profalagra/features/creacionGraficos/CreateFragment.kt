@@ -11,27 +11,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.profalagra.MainActivity
 import com.example.profalagra.R
 import com.example.profalagra.VisGrafActivity
+import com.example.profalagra.databinding.FragmentCreateBinding
 
 class CreateFragment : Fragment() {
 
-    private lateinit var urlShow: TextView
-    private lateinit var inXEdTx: EditText
-    private lateinit var fiXEdTx: EditText
-    private lateinit var inYEdTx: EditText
-    private lateinit var fiYEdTx: EditText
-    private lateinit var escXSp: Spinner
-    private lateinit var escYSp: Spinner
-    private lateinit var boton: Button
-    private lateinit var cancelarBtn: Button
+    private var _binding: FragmentCreateBinding? = null
+    private val binding get() = _binding!!
 
     private val sp = arrayOf("Lineal", "Log")
     private val datosVector = Array(7) { "" }
@@ -44,7 +34,7 @@ class CreateFragment : Fragment() {
             val imagePath = getRealPathFromURI(uri)
             if (imagePath != null) {
                 datosVector[0] = imagePath
-                urlShow.text = "Archivo de imagen: $imagePath"
+                binding.textView4.text = getString(R.string.image_file, imagePath)
             }
         }
     }
@@ -53,37 +43,25 @@ class CreateFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Asegúrate que este nombre coincida con tu XML con los mismos IDs
-        return inflater.inflate(R.layout.fragment_create, container, false)
+        _binding = FragmentCreateBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        urlShow = view.findViewById(R.id.textView4)
-        inXEdTx = view.findViewById(R.id.editTextNumber)
-        fiXEdTx = view.findViewById(R.id.editTextNumber2)
-        inYEdTx = view.findViewById(R.id.editTextNumber3)
-        fiYEdTx = view.findViewById(R.id.editTextNumber4)
-        escXSp = view.findViewById(R.id.spinner)
-        escYSp = view.findViewById(R.id.spinner2)
-        boton = view.findViewById(R.id.button8)
-        cancelarBtn = view.findViewById(R.id.button7)
-
         val spAd = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, sp)
-        escXSp.adapter = spAd
-        escYSp.adapter = spAd
+        binding.spinner.adapter = spAd
+        binding.spinner2.adapter = spAd
 
-        // Ahora la selección de imagen la haces manualmente con long click en el label
-        urlShow.setOnLongClickListener {
+        binding.textView4.setOnLongClickListener {
             cargarImagen()
             true
         }
+        binding.button8.setOnClickListener {
+            datosVector[4] = "${binding.editTextNumber.text}a${binding.editTextNumber2.text}"
+            datosVector[5] = "${binding.editTextNumber3.text}a${binding.editTextNumber4.text}"
 
-        boton.setOnClickListener {
-            datosVector[4] = "${inXEdTx.text}a${fiXEdTx.text}"
-            datosVector[5] = "${inYEdTx.text}a${fiYEdTx.text}"
-
-            datosVector[6] = if (escXSp.selectedItem == "Log") "truey" else "falsey"
-            datosVector[6] += if (escYSp.selectedItem == "Log") "true" else "false"
+            datosVector[6] = if (binding.spinner.selectedItem == "Log") "truey" else "falsey"
+            datosVector[6] += if (binding.spinner2.selectedItem == "Log") "true" else "false"
 
             val intent = Intent(requireContext(), VisGrafActivity::class.java).apply {
                 putExtra("Datos", datosVector)
@@ -91,7 +69,7 @@ class CreateFragment : Fragment() {
             startActivity(intent)
         }
 
-        cancelarBtn.setOnClickListener {
+        binding.button7.setOnClickListener {
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)
         }
