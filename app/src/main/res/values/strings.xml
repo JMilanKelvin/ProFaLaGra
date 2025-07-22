@@ -8,4 +8,16 @@
     <string name="botonChordGraf">Aceptar</string>
     <string name="recent_graphics">Graficos recientes</string>
     <string name="empty_list_message">Aun no hay nada que mostrar aqui</string>
+    <string name="image_file">Archivo de imagen: %1$s</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="escala_en_y">Escala en Y :</string>
+    <string name="escala_en_x">Escala en X :</string>
+    <string name="valor_final_y">Valor final Y :</string>
+    <string name="valor_inicial_y">Valor inicial Y :</string>
+    <string name="valor_final_x">Valor final X :</string>
+    <string name="valor_inicial_x">Valor inicial X :</string>
+    <string name="nombre">Nombre :</string>
+    <string name="grafico_chi_cuadrado">Grafico chi cuadrado</string>
+    <string name="path_imagen">Ruta del archivo: /storage/ubicacion/de/tu/imagen.png</string>
 </resources>
