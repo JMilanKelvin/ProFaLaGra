@@ -6,4 +6,6 @@
     <string name="botonOpenGraf">Open</string>
     <string name="botonEditGraf">Edit</string>
     <string name="botonChordGraf">Accept</string>
+    <string name="recent_graphics">Recent graphics</string>
+    <string name="empty_list_message">Nothing yet to display</string>
 </resources>
