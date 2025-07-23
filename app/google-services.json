@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "802881557584",
+    "project_id": "profalagra",
+    "storage_bucket": "profalagra.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802881557584:android:e29e336ba9584ed6146d55",
+        "android_client_info": {
+          "package_name": "com.sciame.profalagra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkoAe8hm_Q7Un9XE_StlQekpVM97uVM4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
