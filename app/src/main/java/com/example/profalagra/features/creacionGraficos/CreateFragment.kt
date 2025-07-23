@@ -43,7 +43,6 @@ class CreateFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        throw RuntimeException("This is a crash");
         _binding = FragmentCreateBinding.inflate(inflater, container, false)
         return binding.root
     }
