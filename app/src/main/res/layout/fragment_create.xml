@@ -28,12 +28,12 @@
             android:layout_marginBottom="12dp">
 
             <TextView
+                style="@style/TextCreate"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@string/nombre"
-                style="@style/TextBody"
+                android:layout_gravity="center_vertical"
                 android:gravity="start"
-                android:layout_gravity="center_vertical" />
+                android:text="@string/nombre" />
 
             <EditText
                 android:id="@+id/editTextNombre"
