@@ -9,7 +9,8 @@
         <item>5</item>
     </string-array>
     <string-array name="mode">
-        <item>dark mode</item>
-        <item>light mode</item>
+        <item>Claro</item>
+        <item>Oscuro</item>
+        <item>Automático</item>
     </string-array>
 </resources>
