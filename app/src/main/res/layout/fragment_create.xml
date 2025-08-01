@@ -18,17 +18,18 @@
             android:layout_height="wrap_content"
             android:hint="@string/path_imagen"
             android:textSize="16sp"
-            style="@style/TextTitle"
+            style="@style/TEXT"
             android:layout_marginBottom="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            style="@style/TEXT"
             android:layout_marginBottom="12dp">
 
             <TextView
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -42,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/grafico_chi_cuadrado"
                 android:textStyle="italic"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:inputType="text"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -58,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/valor_inicial_x"
                 android:gravity="start"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:layout_gravity="center_vertical" />
 
             <EditText
@@ -68,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="10.0"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -83,7 +84,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/valor_final_x"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -94,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="100000.0"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -109,7 +110,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/valor_inicial_y"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -120,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="1.0"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -135,7 +136,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/valor_final_y"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -146,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="1.0"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:textStyle="italic"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -161,7 +162,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/escala_en_x"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -183,7 +184,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/escala_en_y"
-                style="@style/TextCreate"
+                style="@style/TEXT"
                 android:gravity="start"
                 android:layout_gravity="center_vertical" />
 
@@ -208,8 +209,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/siguiente"
-                android:backgroundTint="#2B2B2B"
-                android:textColor="#FFFFFF"
+                style="@style/BUTTON"
                 android:layout_marginEnd="8dp" />
 
             <Button
@@ -218,8 +218,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/cancelar"
-                android:backgroundTint="#FF6F61"
-                android:textColor="#FFFFFF"
+                style="@style/BUTTON_SECONDARY"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
