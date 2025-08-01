@@ -42,8 +42,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:hint="@string/grafico_chi_cuadrado"
-                android:textStyle="italic"
-                style="@style/TEXT"
+                style="@style/TEXT_ITALIC"
                 android:inputType="text"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -69,8 +68,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="10.0"
-                style="@style/TEXT"
-                android:textStyle="italic"
+                style="@style/TEXT_ITALIC"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
@@ -95,8 +93,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="100000.0"
-                style="@style/TEXT"
-                android:textStyle="italic"
+                style="@style/TEXT_ITALIC"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
@@ -121,8 +118,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="1.0"
-                style="@style/TEXT"
-                android:textStyle="italic"
+                style="@style/TEXT_ITALIC"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
@@ -142,14 +138,14 @@
 
             <EditText
                 android:id="@+id/editTextNumber4"
+                style="@style/TEXT_ITALIC"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
                 android:hint="1.0"
-                style="@style/TEXT"
-                android:textStyle="italic"
-                android:layout_marginStart="8dp" />
+                android:inputType="numberDecimal"
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -159,12 +155,12 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/escala_en_x"
                 style="@style/TEXT"
+                android:layout_width="100dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
                 android:gravity="start"
-                android:layout_gravity="center_vertical" />
+                android:text="@string/escala_en_x" />
 
             <Spinner
                 android:id="@+id/spinner"
