@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="TextTitle">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-    </style>
 
     <style name="TextBody">
         <item name="android:textSize">16sp</item>
