@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import com.example.profalagra.R
 import com.example.profalagra.databinding.FragmentSettingsBinding
 
 
@@ -31,6 +33,22 @@ class SettingsFragment : Fragment() {
 
         val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val savedMode = prefs.getInt(THEME_KEY, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        val adapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.mode,
+            R.layout.spinner_item
+        )
+        adapter.setDropDownViewResource(R.layout.spinner_item)
+        binding.spinnerTheme.adapter = adapter
+
+        val decimalAdapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.decimal_options,
+            R.layout.spinner_item
+        )
+        decimalAdapter.setDropDownViewResource(R.layout.spinner_item)
+        binding.spinnerDecimals.adapter = decimalAdapter
+
         val selectedIndex = when (savedMode) {
             AppCompatDelegate.MODE_NIGHT_NO -> 0
             AppCompatDelegate.MODE_NIGHT_YES -> 1
