@@ -34,7 +34,7 @@ class CreateFragment : Fragment() {
             val imagePath = getRealPathFromURI(uri)
             if (imagePath != null) {
                 datosVector[0] = imagePath
-                binding.textView4.text = getString(R.string.image_file, imagePath)
+                binding.loadImage.text = getString(R.string.image_file, imagePath)
             }
         }
     }
@@ -52,7 +52,7 @@ class CreateFragment : Fragment() {
         binding.spinner.adapter = spAd
         binding.spinner2.adapter = spAd
 
-        binding.textView4.setOnLongClickListener {
+        binding.loadImage.setOnLongClickListener {
             cargarImagen()
             true
         }

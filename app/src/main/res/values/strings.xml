@@ -20,4 +20,7 @@
     <string name="nombre">Nombre :</string>
     <string name="grafico_chi_cuadrado">Grafico chi cuadrado</string>
     <string name="path_imagen">Ruta del archivo: /storage/ubicacion/de/tu/imagen.png</string>
+    <string name="more_options">More options</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
