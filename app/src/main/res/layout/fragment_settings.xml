@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.settings.SettingsFragment">
+    android:padding="30dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings Fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            >
+
+            <TextView
+                android:id="@+id/tvTheme"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tema"
+                style="@style/TextTitleBold" />
+
+            <Spinner
+                android:id="@+id/spinnerTheme"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:background="@drawable/dropdown_background"
+                android:entries="@array/mode"
+                android:popupTheme="@style/SpinnerPopupTheme"
+                 />
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            >
+
+            <TextView
+                android:id="@+id/tvDecimals"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/n_decimales"
+                style="@style/TextTitleBold" />
+
+            <Spinner
+                android:id="@+id/spinnerDecimals"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/dropdown_background"
+                android:spinnerMode="dropdown"
+                android:popupTheme="@style/SpinnerPopupTheme"
+                android:entries="@array/decimal_options" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAbout"
+            style="@style/MyCustomOutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/sobre_nosotros" />
+
+    </LinearLayout>
+</ScrollView>

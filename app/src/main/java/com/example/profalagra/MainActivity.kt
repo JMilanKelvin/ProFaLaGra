@@ -1,15 +1,18 @@
 package com.example.profalagra
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.example.profalagra.databinding.ActivityMainBinding
+import com.example.profalagra.features.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private val REQ_CODE_ASK_PERM = 111
@@ -26,10 +29,18 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val prefs = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+        val savedMode = prefs.getInt("theme_mode", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        AppCompatDelegate.setDefaultNightMode(savedMode)
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         solPerm()
+        selectedIndex = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+            .getInt("last_selected_index", 0) // predeterminado: home
+
         setupBottomNavigation()
     }
 
@@ -49,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             navHosts.add(navHostFragment)
         }
 
-        showFragment(0)
+        showFragment(selectedIndex)
 
         binding.bottomNav.setOnItemSelectedListener { item ->
             val index = when (item.itemId) {

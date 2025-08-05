@@ -1,16 +1,49 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.ProFaLaGra" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+<!--    dark mode-->
+    <style name="SCREEN">
+        <item name="android:background">@color/black</item>
+    </style>
+    <style name="TEXT">
+        <item name="android:textColor">@color/main</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="TEXT_ITALIC">
+        <item name="android:textColor">@color/main</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="TextTitleBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/main</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="BUTTON">
+        <item name="android:backgroundTint">@color/main</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="BUTTON_SECONDARY">
+        <item name="android:backgroundTint">@color/buttonRed</item>
+        <item name="android:textColor">@color/main</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="MyCustomOutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/main</item>
+        <item name="android:textColor">@color/main</item>
+        <item name="rippleColor">@color/button_outlined_ripple_color_light</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="SpinnerPopupTheme">
+        <item name="android:textColor">@color/main</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>
