@@ -23,4 +23,7 @@
     <string name="tema">Tema :</string>
     <string name="n_decimales">Nº Decimales :</string>
     <string name="sobre_nosotros">Sobre nosotros</string>
+    <string name="more_options">More options</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

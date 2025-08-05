@@ -17,6 +17,15 @@
         android:orientation="vertical"
         tools:context=".features.lista.ListFragment">
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:scrollbars="vertical"/>
+
         <include
             layout="@layout/layout_info_message"
             android:id="@+id/info_message"
