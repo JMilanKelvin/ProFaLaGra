@@ -73,10 +73,8 @@ class SettingsFragment : Fragment() {
 
                     prefs.edit()
                         .putInt(THEME_KEY, mode)
-                        .putInt("last_selected_index", 2)
                         .apply()
 
-//                    AppCompatDelegate.setDefaultNightMode(mode)
                     activity?.recreate()
                 }
             }

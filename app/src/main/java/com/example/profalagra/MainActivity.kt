@@ -61,6 +61,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         showFragment(selectedIndex)
+        binding.bottomNav.selectedItemId = when (selectedIndex) {
+            0 -> R.id.home_button
+            1 -> R.id.add_button
+            2 -> R.id.settings_button
+            else -> R.id.home_button
+        }
 
         binding.bottomNav.setOnItemSelectedListener { item ->
             val index = when (item.itemId) {
@@ -72,6 +78,10 @@ class MainActivity : AppCompatActivity() {
 
             if (index != selectedIndex) {
                 showFragment(index)
+                getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+                    .edit()
+                    .putInt("last_selected_index", selectedIndex)
+                    .apply()
             }
             true
         }
