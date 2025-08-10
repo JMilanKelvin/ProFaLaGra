@@ -13,15 +13,19 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.profalagra.MainActivity
 import com.example.profalagra.R
 import com.example.profalagra.VisGrafActivity
 import com.example.profalagra.databinding.FragmentCreateBinding
+import com.example.profalagra.features.NavigationViewModel
 
 class CreateFragment : Fragment() {
 
     private var _binding: FragmentCreateBinding? = null
     private val binding get() = _binding!!
+    private var pickerOpened = false
+    private lateinit var navViewModel: NavigationViewModel
 
     private val sp = arrayOf("Lineal", "Log")
     private val datosVector = Array(7) { "" }
@@ -35,8 +39,14 @@ class CreateFragment : Fragment() {
             if (imagePath != null) {
                 datosVector[0] = imagePath
                 binding.loadImage.text = getString(R.string.image_file, imagePath)
+                // no mostrar el picker xq ya hay imagen
+                pickerOpened = true
             }
         }
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        navViewModel = ViewModelProvider(requireActivity()).get(NavigationViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -48,14 +58,27 @@ class CreateFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        navViewModel.selectedIndex.observe(viewLifecycleOwner) { index ->
+            if (index == 1) {
+                if (!pickerOpened) {
+                    pickerOpened = true
+                    cargarImagen()
+                }
+            } else {
+                pickerOpened = false
+            }
+        }
+
         val spAd = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, sp)
         binding.spinner.adapter = spAd
         binding.spinner2.adapter = spAd
 
-        binding.loadImage.setOnLongClickListener {
-            cargarImagen()
-            true
-        }
+
+//        binding.loadImage.setOnLongClickListener {
+//            cargarImagen()
+//            true
+//        }
         binding.button8.setOnClickListener {
             datosVector[4] = "${binding.editTextNumber.text}a${binding.editTextNumber2.text}"
             datosVector[5] = "${binding.editTextNumber3.text}a${binding.editTextNumber4.text}"
