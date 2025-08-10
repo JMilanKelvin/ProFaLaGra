@@ -1,6 +1,7 @@
 package com.example.profalagra.features.lista
 
 import android.os.Bundle
+import android.text.Layout.Directions
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.profalagra.R
 import com.example.profalagra.databinding.FragmentListBinding
 import java.io.BufferedReader
@@ -88,7 +90,7 @@ class ListFragment : Fragment(), AdapterView.OnItemClickListener {
         popup.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.action_edit -> {
-                    Toast.makeText(requireContext(), "Edit $item", Toast.LENGTH_SHORT).show()
+                    goToEditFragment()
                     true
                 }
                 R.id.action_delete -> {
@@ -102,6 +104,11 @@ class ListFragment : Fragment(), AdapterView.OnItemClickListener {
             }
         }
         popup.show()
+    }
+
+    private fun goToEditFragment(){
+        val action = ListFragmentDirections.actionListFragmentToEditFragment2(names[numGrafSelect],numGrafSelect)
+        findNavController().navigate(action)
     }
 
     private fun displayEmptyMessage(){

@@ -11,5 +11,20 @@
         android:id="@+id/listFragment"
         android:name="com.example.profalagra.features.lista.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_editFragment2"
+            app:destination="@id/editFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment2"
+        android:name="com.example.profalagra.features.edicionGraficos.EditFragment"
+        android:label="EditFragment" >
+        <argument
+            android:name="datos"
+            app:argType="string[]" />
+        <argument
+            android:name="numGrafSelect"
+            app:argType="integer" />
+    </fragment>
 </navigation>
