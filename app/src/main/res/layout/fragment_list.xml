@@ -18,13 +18,18 @@
         tools:context=".features.lista.ListFragment">
 
 
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Buscar gráfico..." />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:scrollbars="vertical"/>
+            android:scrollbars="vertical" />
 
         <include
             layout="@layout/layout_info_message"
@@ -32,4 +37,5 @@
             app:title="@{infoTitle}"
             app:body="@{infoBody}" />
     </LinearLayout>
+
 </layout>

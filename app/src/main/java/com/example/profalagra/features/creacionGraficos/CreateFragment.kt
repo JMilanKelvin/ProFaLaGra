@@ -73,7 +73,8 @@ class CreateFragment : Fragment() {
         val spAd = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, sp)
         binding.spinner.adapter = spAd
         binding.spinner2.adapter = spAd
-
+            val nombreGrafico = binding.editTextNombre.text.toString().trim()
+            datosVector[0] = nombreGrafico
 
 //        binding.loadImage.setOnLongClickListener {
 //            cargarImagen()
@@ -85,7 +86,6 @@ class CreateFragment : Fragment() {
 
             datosVector[6] = if (binding.spinner.selectedItem == "Log") "truey" else "falsey"
             datosVector[6] += if (binding.spinner2.selectedItem == "Log") "true" else "false"
-
             val intent = Intent(requireContext(), VisGrafActivity::class.java).apply {
                 putExtra("Datos", datosVector)
             }
