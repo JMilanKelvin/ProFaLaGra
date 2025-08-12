@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pestaña activa (seleccionada) -->
+    <item android:color="@color/gray200" android:state_checked="true" />
+    <!-- Estado inactivo -->
+    <item android:color="@color/backgroundMain" />
+</selector>

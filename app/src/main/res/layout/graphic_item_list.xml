@@ -14,7 +14,7 @@
         android:layout_weight="1"
         android:maxLines="3"
         android:textSize="16sp"
-        android:textColor="@android:color/black"
+        style="@style/TEXT"
         android:ellipsize="end"
         tools:text="sdcard/downloads/testGraphic.png"/>
 

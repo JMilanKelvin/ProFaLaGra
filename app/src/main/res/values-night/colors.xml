@@ -2,4 +2,7 @@
 <resources>
     <color name="backgroundSpinner">@color/black</color>
     <color name="spinnerText">@color/main</color>
+    <color name="backgroundMain">@color/black</color>
+    <color name="grayButtom">@color/white</color>
+
 </resources>

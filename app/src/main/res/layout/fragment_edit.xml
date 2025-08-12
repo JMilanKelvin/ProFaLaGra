@@ -45,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        style="@style/BUTTON"
         android:text="Guardar"
         app:layout_constraintBottom_toTopOf="@+id/sbZoom3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Borrar"
+        style="@style/BUTTON_SECONDARY"
         app:layout_constraintBottom_toBottomOf="@+id/btSavDat2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btSavDat2" />

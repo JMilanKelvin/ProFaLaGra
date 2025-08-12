@@ -5,8 +5,11 @@
     <color name="main">#DEFFFC</color>
     <color name="buttonRed">#FF6F61</color>
     <color name="gray">#666666</color>
+    <color name="gray200">#BBE2E7</color>
+    <color name="grayButtom">#666666</color>
     <color name="button_outlined_text_color_light">#000000</color>
     <color name="button_outlined_ripple_color_light">#DDDDDD</color>
     <color name="backgroundSpinner">@color/white</color>
     <color name="spinnerText">@color/black</color>
+    <color name="backgroundMain">#DEFFFC</color>
 </resources>
