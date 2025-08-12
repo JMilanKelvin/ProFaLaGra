@@ -10,13 +10,16 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.example.profalagra.databinding.ActivityMainBinding
+import com.example.profalagra.features.NavigationViewModel
 import com.example.profalagra.features.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private val REQ_CODE_ASK_PERM = 111
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navViewModel: NavigationViewModel
 
     private val navGraphIds = listOf(
         R.navigation.nav_list,
@@ -29,18 +32,20 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val prefs = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
-        val savedMode = prefs.getInt("theme_mode", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-        AppCompatDelegate.setDefaultNightMode(savedMode)
-
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        solPerm()
-        selectedIndex = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
-            .getInt("last_selected_index", 0) // predeterminado: home
+        val prefs = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+        val savedMode = prefs.getInt("theme_mode", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        AppCompatDelegate.setDefaultNightMode(savedMode)
 
+        navViewModel = ViewModelProvider(this).get(NavigationViewModel::class.java)
+        selectedIndex = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+            .getInt("last_selected_index", 0)
+        navViewModel.selectedIndex.value = selectedIndex
+
+        solPerm()
         setupBottomNavigation()
     }
 
@@ -78,9 +83,10 @@ class MainActivity : AppCompatActivity() {
 
             if (index != selectedIndex) {
                 showFragment(index)
+                navViewModel.selectedIndex.value = index // Aviso al ViewModel
                 getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
                     .edit()
-                    .putInt("last_selected_index", selectedIndex)
+                    .putInt("last_selected_index", index)
                     .apply()
             }
             true

@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.PopupMenu
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.profalagra.R
 import com.example.profalagra.databinding.FragmentListBinding
 import java.io.BufferedReader
@@ -32,6 +34,9 @@ class ListFragment : Fragment(), AdapterView.OnItemClickListener {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentListBinding.inflate(inflater, container, false)
+
+        setupRecyclerView()
+        setupSearchView()
         return binding.root
     }
 
@@ -42,6 +47,31 @@ class ListFragment : Fragment(), AdapterView.OnItemClickListener {
         displayEmptyMessage()
     }
 
+    private fun setupRecyclerView() {
+        graphicsAdapter = GraphicsAdapter(listGrafsInt) { item, view ->
+            // Aquí tu lógica para el botón "more"
+            Toast.makeText(requireContext(), "Click en $item", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = graphicsAdapter
+        }
+    }
+
+    private fun setupSearchView() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                graphicsAdapter.filter(query ?: "")
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                graphicsAdapter.filter(newText ?: "")
+                return true
+            }
+        })
+    }
     private fun listGraphics(){
 
         //Lectura de archivo de datos
